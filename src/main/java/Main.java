@@ -13,17 +13,21 @@ public class Main {
         System.out.println("Nowa gra\n");
         do {
             System.out.println("Wybierz figurę:");
+            System.out.print("X:");
             x = scanner.nextInt();
+            System.out.print("Y:");
             y = scanner.nextInt();
             f = szachownica.zabierzPionek(x, y);
             if (null != f) {
-                System.out.println("Wybierz gdzie chcesz ją przesunąć:");
+                System.out.println("Wybierz gdzie chcesz przesunąć " + f.getName() + ":");
+                System.out.print("X:");
                 x = scanner.nextInt();
+                System.out.print("Y:");
                 y = scanner.nextInt();
                 szachownica.ustawianiePozycji(f, x, y);
             }
 
-        } while (!val.contains("stop"));
+        } while (true);
 
     }
 }

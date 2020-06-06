@@ -27,6 +27,17 @@ public class Szachownica {
         if (x < 0 || x > 7 || y < 0 || y > 7) {
             throw new Exception("Pole poza szachownicą!");
         }
+
+        if (szachownica[x][y].getColor() == f.getColor()) {
+            System.out.println("Chcesz zbić swój pionek! (" + szachownica[x][y].getName() + ")");
+            return;
+        }
+
+        if (null != szachownica[x][y]) {
+            System.out.println("Udało Ci się zbić pionek: " + szachownica[x][y]);
+            szachownica[x][y].kill();
+        }
+
         szachownica[x][y] = f;
         if (f.czyDozRuch(f.getPozycja(), new Pozycja(x, y))) {
             f.setPozycja(new Pozycja(x, y));
