@@ -13,6 +13,10 @@ public class Skoczek extends Figura {
         super(name, color, pozycja);
     }
 
+    public String sayHello() {
+        return "Dzień dobry, tu skoczek";
+    }
+
     @Override
     public boolean czyDozRuch(Pozycja start, Pozycja end) {
         int x = Math.abs(start.getX() - end.getX());

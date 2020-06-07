@@ -1,5 +1,7 @@
 package szachy;
 
+import szachy.figury.*;
+
 public abstract class Figura {
     private String name;
     private Kolor color;
@@ -15,6 +17,27 @@ public abstract class Figura {
         this.pozycja = pozycja;
         this.alive = true;
     }
+
+    public static Figura FiguraFactory(TypFigury typFigury) throws Exception {
+        switch (typFigury) {
+            case PIONEK:
+                return new Pionek();
+            case WIEZA:
+                return new Wieza();
+            case SKOCZEK:
+                return new Skoczek();
+            case GONIEC:
+                return new Goniec();
+            case HETMAN:
+                return new Hetman();
+            case KROL:
+                return new Krol();
+            default:
+                break;
+        }
+        throw new Exception("Nie istnieje figura typu " + typFigury.toString());
+    }
+
 
     public abstract boolean czyDozRuch(Pozycja start, Pozycja end);
 
