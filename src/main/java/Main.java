@@ -27,7 +27,6 @@ public class Main {
                 y = scanner.nextInt();
                 szachownica.ustawianiePozycji(f, x, y);
             }
-
         } while (true);
 
     }
