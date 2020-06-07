@@ -5,12 +5,14 @@ import szachy.Kolor;
 import szachy.Pozycja;
 
 public class Pionek extends Figura {
+    private TypFigury typFigury;
 
     public Pionek() {
     }
 
     public Pionek(String name, Kolor color, Pozycja pozycja) {
         super(name, color, pozycja);
+        this.typFigury = TypFigury.PIONEK;
     }
 
     @Override
@@ -20,4 +22,5 @@ public class Pionek extends Figura {
 
         return (x == 1) && (y == 0);
     }
+
 }

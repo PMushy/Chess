@@ -5,12 +5,15 @@ import szachy.Kolor;
 import szachy.Pozycja;
 
 public class Krol extends Figura {
+    private TypFigury typFigury;
 
     public Krol() {
     }
 
     public Krol(String name, Kolor color, Pozycja pozycja) {
         super(name, color, pozycja);
+        this.typFigury = TypFigury.KROL;
+
     }
 
     @Override

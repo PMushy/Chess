@@ -5,12 +5,15 @@ import szachy.Kolor;
 import szachy.Pozycja;
 
 public class Hetman extends Figura {
+    private TypFigury typFigury;
 
     public Hetman() {
     }
 
     public Hetman(String name, Kolor color, Pozycja pozycja) {
         super(name, color, pozycja);
+        this.typFigury = TypFigury.HETMAN;
+
     }
 
     @Override
@@ -18,6 +21,6 @@ public class Hetman extends Figura {
         int x = Math.abs(start.getX() - end.getX());
         int y = Math.abs(start.getY() - end.getY());
 
-        return x == y || ((x==0) || (y==0));
+        return x == y || ((x == 0) || (y == 0));
     }
 }

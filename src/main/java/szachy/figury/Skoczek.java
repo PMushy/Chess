@@ -5,16 +5,15 @@ import szachy.Kolor;
 import szachy.Pozycja;
 
 public class Skoczek extends Figura {
+    private TypFigury typFigury;
 
     public Skoczek() {
     }
 
     public Skoczek(String name, Kolor color, Pozycja pozycja) {
         super(name, color, pozycja);
-    }
+        this.typFigury = TypFigury.SKOCZEK;
 
-    public String sayHello() {
-        return "Dzień dobry, tu skoczek";
     }
 
     @Override

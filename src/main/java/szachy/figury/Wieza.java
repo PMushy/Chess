@@ -5,12 +5,15 @@ import szachy.Kolor;
 import szachy.Pozycja;
 
 public class Wieza extends Figura {
+    private TypFigury typFigury;
 
     public Wieza() {
     }
 
     public Wieza(String name, Kolor color, Pozycja pozycja) {
         super(name, color, pozycja);
+        this.typFigury = TypFigury.WIEZA;
+
     }
 
     @Override

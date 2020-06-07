@@ -49,6 +49,11 @@ public class Szachownica {
                     szachownica[x][y] = f;
 
                     f.setPozycja(new Pozycja(x, y));
+
+                    if (f.getTypFigury() == TypFigury.PIONEK) {
+                        if (f.czyAwansuj((Pionek) f.Awansuj(f))) ;
+                    }
+
                     System.out.println("Przesunięto " + f.getName() + " na " + x + ", " + y);
                     return;
                 }

@@ -5,12 +5,15 @@ import szachy.Kolor;
 import szachy.Pozycja;
 
 public class Goniec extends Figura {
+    private TypFigury typFigury;
 
     public Goniec() {
     }
 
     public Goniec(String name, Kolor color, Pozycja pozycja) {
         super(name, color, pozycja);
+        this.typFigury = TypFigury.GONIEC;
+
     }
 
     @Override
