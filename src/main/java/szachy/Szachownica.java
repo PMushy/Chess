@@ -17,9 +17,7 @@ public class Szachownica {
             System.out.println("Puste pole");
             return null;
         } else {
-            Figura f = szachownica[x][y];
-            szachownica[x][y] = null;
-            return f;
+            return szachownica[x][y];
         }
     }
 
@@ -27,20 +25,28 @@ public class Szachownica {
         if (x < 0 || x > 7 || y < 0 || y > 7) {
             throw new Exception("Pole poza szachownicą!");
         }
+        Pozycja p = f.getPozycja();
 
-        if (szachownica[x][y].getColor() == f.getColor()) {
-            System.out.println("Chcesz zbić swój pionek! (" + szachownica[x][y].getName() + ")");
-            return;
-        }
-
-        if (null != szachownica[x][y]) {
-            System.out.println("Udało Ci się zbić pionek: " + szachownica[x][y]);
-            szachownica[x][y].kill();
-        }
-
-        szachownica[x][y] = f;
         if (f.czyDozRuch(f.getPozycja(), new Pozycja(x, y))) {
+            if (null != szachownica[x][y]) {
+                if (szachownica[x][y].getColor() == f.getColor()) {
+                    System.out.println("Chcesz zbić swój pionek! (" + szachownica[x][y].getName() + ")");
+                } else {
+
+                    System.out.println("Udało Ci się zbić pionek: " + szachownica[x][y]);
+                    szachownica[x][y].kill();
+
+                    szachownica[p.getX()][p.getY()] = null;
+                    szachownica[x][y] = f;
+
+                    f.setPozycja(new Pozycja(x, y));
+                    System.out.println("Przesunięto " + f.getName() + " na " + x + ", " + y);
+                    return;
+                }
+            }
             f.setPozycja(new Pozycja(x, y));
+            szachownica[p.getX()][p.getY()] = null;
+            szachownica[x][y] = f;
             System.out.println("Przesunięto " + f.getName() + " na " + x + ", " + y);
         } else {
             System.out.println("Niedozwolony ruch");

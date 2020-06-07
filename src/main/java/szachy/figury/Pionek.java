@@ -18,6 +18,6 @@ public class Pionek extends Figura {
         int x = Math.abs(start.getX() - end.getX());
         int y = Math.abs(start.getY() - end.getY());
 
-        return (x == 0) && (y == 1);
+        return (x == 1) && (y == 0);
     }
 }

@@ -10,6 +10,7 @@ public class Main {
         String val = "";
         int x, y;
         Figura f;
+        szachownica.wypiszWszystko();
         System.out.println("Nowa gra\n");
         do {
             System.out.println("Wybierz figurę:");
